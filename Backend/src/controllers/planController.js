@@ -1,6 +1,9 @@
 const Plan         = require('../models/Plan');
 const User         = require('../models/User');
-const ChatHistory  = require('../models/ChatHistory.js');
+const path = require('path');
+const modelPath = path.join(__dirname, '..', 'models', 'ChatHistory.js');
+
+const ChatHistory = require(modelPath);
 const { generatePlan }          = require('../gemini/planGenerator');
 const { replanAfterMissedStep } = require('../gemini/replanEngine');
 const { createCalendarEvents }  = require('../calendar/eventManager');
