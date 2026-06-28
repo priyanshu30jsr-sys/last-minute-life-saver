@@ -4,21 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * Wraps children in depth-stacked parallax layers.
- *
- * Simple usage (auto-wraps each child in a layer):
- * <DepthParallax speeds={[0.2, 0.5, 1]}>
- *   <BackgroundLayer />
- *   <MidLayer />
- *   <ForegroundLayer />
- * </DepthParallax>
- *
- * Render-prop usage:
- * <DepthParallax speeds={[0.3, 0.7]}>
- *   {(speeds) => speeds.map((s, i) => <div key={i}>...</div>)}
- * </DepthParallax>
- */
+// Wraps children in depth-stacked parallax layers Simple usage (auto-wraps each child in a layer):<DepthParallax speeds={[0.2, 0.5, 1]}>  <BackgroundLayer /   <MidLayer />  <ForegroundLayer /></DepthParallaxRender-prop usage:<DepthParallax speeds={[0.3, 0.7]}>  {(speeds) => speeds.map((s, i) => <div key={i}>...</div>)}</DepthParallax>
 const DepthParallax = ({
   children,
   speeds    = [0.2, 0.5, 0.9],

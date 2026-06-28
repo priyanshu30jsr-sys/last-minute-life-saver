@@ -10,15 +10,21 @@ const createOAuthClient = () => {
 
 const getAuthUrl = () => {
   const client = createOAuthClient();
-  return client.generateAuthUrl({
+  const authUrl = client.generateAuthUrl({
     access_type: 'offline',
     scope: [
-      'https://www.googleapis.com/auth/calendar',
+      // Changed from full /calendar to /calendar.events to bypass policy blocks
+      'https://www.googleapis.com/auth/calendar.events', 
       'https://www.googleapis.com/auth/userinfo.email',
       'https://www.googleapis.com/auth/userinfo.profile'
     ],
-    prompt: 'consent' // Forces refresh_token to be returned every time
+    prompt: 'consent' 
   });
+
+  // CRITICAL DEBUG LOG: If it still fails, copy this exact string from Render logs!
+  console.log("=== OAUTH URL BEING SENT TO GOOGLE ===", authUrl);
+  
+  return authUrl;
 };
 
 const getTokens = async (code) => {
