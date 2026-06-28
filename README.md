@@ -62,7 +62,7 @@ everything to Google Calendar without you lifting a finger.
 | **Google AI Studio** | Gemini 1.5 Pro API |
 | **Google Calendar API** | Autonomous event creation |
 | **Firebase Hosting** | Frontend (React) |
-| **Google Cloud Run** | Backend (Node.js, containerized) |
+| **Render** | Backend (Node.js, containerized) |
 | **MongoDB Atlas** | Database (free tier) |
 
 ---
