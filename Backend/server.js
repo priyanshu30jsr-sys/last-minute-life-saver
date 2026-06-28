@@ -3,7 +3,14 @@ const http = require('http');
 const app = require('./src/app');
 const { initSocket } = require('./src/socket/socketManager');
 const { startMorningBriefJob } = require('./src/jobs/morningBrief');
+const fs = require('fs');
+const path = require('path');
 
+try {
+  console.log("🔍 Models directory contents:", fs.readdirSync(path.join(__dirname, 'src', 'models')));
+} catch (err) {
+  console.log("❌ Could not read models directory:", err.message);
+}
 const PORT = process.env.PORT || 8080;
 
 const server = http.createServer(app);
